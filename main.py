@@ -39,6 +39,7 @@ rash = [['   1   ', '   2   ', '   3   '],
         [' B ', '  ', ' | ', '  ', ' | ', '  '],
         [' C ', '  ', ' | ', '  ', ' | ', '  ']]
 
+# printing the tic tac toe game
 def print_rash():
     print('\n')
 
@@ -48,17 +49,17 @@ def print_rash():
 
         print('\n')
 
-
+#load correct position
 def posicao(pos):
     pos = pos + (pos - 1)
     return pos
 
+# add position in array
 def add_posi(player, local_y, local_x):
     rash[local_y][posicao(local_x)] = player
 
 
-
-
+# Split the string in real positions in array
 def split_site(site):
     local_y = 0
     local_x = 0
@@ -77,6 +78,7 @@ def split_site(site):
 
     return local_x, local_y
 
+# ---------------------- Add player configurations
 player_1 = input("Player 1 type out 'X' or 'O': ").upper()
 player_2 = ''
 if player_1 == 'X':
@@ -86,6 +88,8 @@ else:
     print('Player 2 you are "X" ')
     player_2 = 'X'
 print_rash()
+
+# start game
 while True:
     site = input("Player 1 Type out one letter and a number: ").upper()
 
