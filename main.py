@@ -77,6 +77,9 @@ def split_site(site):
             local_x = int(item)
 
     return local_x, local_y
+# def check_win(rash, player_1, player_2):
+locals_ply1 = []
+locals_ply2 = []
 
 # ---------------------- Add player configurations
 player_1 = input("Player 1 type out 'X' or 'O': ").upper()
@@ -94,7 +97,8 @@ while True:
     site = input("Player 1 Type out one letter and a number: ").upper()
 
     locals = split_site(site)
-    print(locals)
+    print('local player 1: ',locals)
+    locals_ply1.append(locals)
 
     add_posi(player=player_1, local_y= locals[1], local_x=locals[0])
     print_rash()
@@ -102,7 +106,9 @@ while True:
     site = input('Player 2 typed out one letter and a number').upper()
 
     locals = split_site(site)
-    print(locals)
-
+    print('local player 2: ',locals)
+    locals_ply2.append(locals)
     add_posi(player=player_2, local_y=locals[1], local_x=locals[0])
     print_rash()
+    print(locals_ply1)
+    print(locals_ply2)
